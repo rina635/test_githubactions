@@ -6,9 +6,8 @@ name: workflow
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-   # branches: [ main ]
+   branches: [ main ]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   execute_deploy:
-   if: ${{ github.ref == 'refs/heads/main' }}
-   uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yml

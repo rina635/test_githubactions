@@ -16,7 +16,7 @@ jobs:
       - name: Set Environment Variables
         uses: ./.github/actions/setvars
         with:
-          varFilePath: ./.github/variables/myvars.env
+          varFilePath: ./.github/variables/myvars.yaml
       - name: Set up python environment
         uses: actions/setup-python@v2
         with:

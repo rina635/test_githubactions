@@ -10,22 +10,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  deploy:
+  execute_deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-   
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-      - name: Set Environment Variables
-        uses: ./.github/actions/setvars
-        with:
-          varFilePath: ./.github/variables/myvars.env
-      - name: Set up python environment
-        uses: actions/setup-python@v2
-        with:
-          python-vesion: 3.6
-      - name: Run python script
-        run: |
-          python script.py
+    uses: ./.github/workflows/deploy.yml
         
